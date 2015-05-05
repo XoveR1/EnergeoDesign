@@ -1,0 +1,32 @@
+@import "colors";
+
+.include-custom-font(@family: arial, @weight: normal, @style: normal){
+    @font-face{
+        font-family: @family;
+        src:url('fonts/@{family}/@{family}.eot');
+        src:url('fonts/@{family}/@{family}.eot?#iefix') format('embedded-opentype'),
+            url('fonts/@{family}/@{family}.woff') format('woff'),
+            url('fonts/@{family}/@{family}.ttf') format('truetype'),
+            url('fonts/@{family}/@{family}.svg#icon') format('svg');
+        font-weight: @weight;
+        font-style: @style;
+    }
+}
+
+.include-custom-font("MyriadProRegular");
+.include-custom-font("MyriadProBold");
+.include-custom-font("MyriadProBoldItalic");
+.include-custom-font("MyriadProItalic");
+.include-custom-font("MyriadProSemiBold");
+.include-custom-font("MyriadProSemiBoldItalic");
+
+@font-size-default: 14px;
+@font-line-height-default: 14px;
+@font-family-default: "MyriadProRegular", Arial, sans-serif;
+
+.default-font(){
+  font-family: @font-family-default;
+  font-size: @font-size-default;
+  color: @color-default-text;
+  line-height: @font-line-height-default;
+}

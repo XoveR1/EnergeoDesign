@@ -1,0 +1,59 @@
+@import "colors";
+@import "fonts";
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+html, body, #main-wrapper {
+    .default-font();
+    background : @color-light-green;
+    height: 100%;
+}
+
+body > #main-wrapper {
+    height: auto;
+    min-height: 100%;
+}
+
+#content-wrapper {
+    padding-bottom: 150px;
+}
+
+#content-wrapper header {
+    min-height: 200px;
+}
+
+#slider-block {
+    min-height: 300px;
+}
+
+#content-block {
+    margin: 0 auto;
+    padding: 0 10%;
+    min-height: 600px;
+}
+
+footer {
+    position: relative;
+    margin-top: -150px;
+    height: 150px;
+    clear: both;
+}
+
+@media only screen and (min-width: 480px) {
+
+}
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+@media only screen and (min-width: 1382px) {
+
+}
