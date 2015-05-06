@@ -6,7 +6,7 @@ header {
     position: relative;
     margin: 0 auto;
     width: 90%;
-    padding: 20px;
+    padding: 20px 20px 60px 20px;
   }
 
   .logo {
@@ -24,22 +24,35 @@ header {
   .search-form {
     display: inline-block;
     float: right;
+    position: relative;
+    margin: 7px 0 0 0;
 
     input {
-      .bordered(@color-light-gray);
+      .bordered(@color-light-gray, @color-light-gray, @color-light-gray, @color-light-gray);
       .border-radius(5px, 5px, 5px, 5px);
-      padding: 12px 10px;
-      min-width: 200px;
+      padding: 14px 45px 14px 10px;
+      min-width: 240px;
+
+      &:focus {
+        border-color: @color-green;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(144, 177, 78, 0.6);
+        outline: 0 none;
+      }
     }
 
     button {
-      .bordered(@color-light-gray);
+      .bordered(@color-light-gray, @color-light-gray, @color-light-gray, @color-light-gray);
       .border-radius(5px, 5px, 5px, 5px);
       .no-text();
-      .square(40px);
-      position: relative;
-      top: 5px;
+      .square(46px);
+      position: absolute;
+      top: 0;
+      right: 0;
       background-color: @color-medium-gray;
+      &:hover {
+        background-color: @color-light-gray;
+        outline: 0 none;
+      }
     }
   }
 
@@ -48,6 +61,7 @@ header {
     display: inline-block;
     padding: 0 0 0 60px;
     float: right;
+    margin-left: 20px;
 
     i {
       position: absolute;
@@ -68,13 +82,54 @@ header {
 
   nav {
     display: block;
+    width: 100%;
     position: absolute;
     bottom: 0;
     left: 0;
+    text-align: center;
+
+    ul {
+      display: inline-block;
+      height: 44px;
+      overflow: hidden;
+    }
+
+    li:hover, li.active {
+      background: @color-green;
+      .rounded(10px 10px 0 0);
+      a {
+        color: @color-white;
+      }
+      ul {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: -38px;
+        background: @color-green;
+        width: 100%;
+        height: 41px;
+        overflow: hidden;
+        a {
+          font-weight: normal;
+          text-transform: capitalize;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
     li{
       list-style: none;
       display: inline-block;
-      padding: 5px;
+      padding: 14px 20px 15px 20px;
+      a {
+        font-weight: bold;
+        color: @color-dark-gray;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-decoration: none;
+      }
       ul {
         display: none;
       }
