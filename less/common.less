@@ -8,3 +8,18 @@
 * html .clearfix { height: 1%;}
 .clearfix {display: block;}
 /* End hide from IE-mac */
+
+.square(@size){
+  height: @size;
+  width: @size;
+}
+
+.size(@width, @height){
+  height: @height;
+  width: @width;
+}
+
+.no-text(){
+  font-size: 0;
+  text-indent: -999em;
+}
