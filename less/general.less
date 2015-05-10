@@ -10,10 +10,15 @@ a {
   outline: none;
 }
 
-html, body, #main-wrapper {
+html, body {
     .default-font();
     background : @color-light-green;
     height: 100%;
+}
+
+#main-wrapper {
+  background : @color-light-green;
+  height: 100%;
 }
 
 body > #main-wrapper {
@@ -30,9 +35,9 @@ body > #main-wrapper {
 }
 
 #content-block {
-    margin: 0 auto;
-    padding: 0 10%;
-    min-height: 600px;
+  margin: 0 auto;
+  padding-top: 100px;
+  max-width: @content-max-width;
 }
 
 footer {
@@ -43,15 +48,15 @@ footer {
 }
 
 @media only screen and (min-width: 480px) {
-
 }
 
 @media only screen and (min-width: 768px) {
-
+  #content-block {
+    padding: 0;
+  }
 }
 
 @media only screen and (min-width: 992px) {
-
 }
 
 @media only screen and (min-width: 1382px) {

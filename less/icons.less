@@ -50,6 +50,16 @@
   background-size: 240px;
 }
 
+.icon-time {
+  .icon();
+  background-position: -30px -33px;
+}
+
+.icon-user {
+  .icon();
+  background-position: -1px -33px;
+}
+
 .icon-mobile-nav {
   display: inline-block;
   height: 41px;
@@ -64,4 +74,35 @@
     margin-top: 6px;
     margin-bottom: 8px;
   }
+}
+
+.icon-arrow(@angle1, @angle2, @margin, @rounded){
+  &:before, &:after {
+    content: "";
+    display: block;
+    .size(30%, 5%);
+    .rounded(@rounded);
+    background: @color-green;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  &:before {
+    .rotation(@angle1);
+    margin-top: -10%;
+    margin-left: @margin;
+  }
+  &:after {
+    .rotation(@angle2);
+    margin-top: 10%;
+    margin-left: @margin;
+  }
+}
+
+.icon-arrow-left {
+  .icon-arrow(-45deg, 45deg, -20%, 0 40% 40% 0);
+}
+
+.icon-arrow-right {
+  .icon-arrow(45deg, -45deg, -10%, 40% 0 0 40%);
 }
