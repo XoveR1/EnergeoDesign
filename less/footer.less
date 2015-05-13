@@ -1,4 +1,12 @@
+#content-wrapper {
+  padding-bottom: 590px;
+}
+
 footer {
+  position: relative;
+  margin-top: -590px;
+  height: 590px;
+  clear: both;
   background: @color-white;
   font-size: 16px;
   color: @color-dark-gray;
@@ -8,18 +16,17 @@ footer {
     max-width: @content-max-width;
     margin: 0 auto;
     padding: 30px 0 0 0;
+    text-align: center;
   }
 
   .left-column {
-    width: 45%;
-    display: inline-block;
-    text-align: left;
+    width: auto;
+    display: block;
   }
 
   .right-column {
-    width: 54%;
-    display: inline-block;
-    text-align: right;
+    width: auto;
+    display: block;
   }
 
   a {
@@ -35,15 +42,16 @@ footer {
   }
 
   .contacts-column {
-    display: inline-block;
-    width: 45%;
     vertical-align: top;
+    margin-bottom: 20px;
   }
 
   .contacts-list {
     display: inline-block;
+    width: 220px;
     li {
-      padding: 5px 0 5px 40px;
+      display: inline-block;
+      padding: 5px 0 5px 23px;
       position: relative;
       list-style: none;
       margin: 0 0 15px 0;
@@ -51,14 +59,13 @@ footer {
       i {
         position: absolute;
         left: 0;
-        top: 0;
+        top: 2px;
       }
     }
 
   }
 
   .social-links {
-    display: inline-block;
     a {
       .no-text();
       display: inline-block;
@@ -67,15 +74,15 @@ footer {
   }
 
   .phones-list {
-    display: inline-block;
-    width: 47%;
     vertical-align: top;
     position: relative;
-    padding: 0 0 0 30px;
+    padding: 45px 0 0 0;
+    margin-bottom: 40px;
     i {
       position: absolute;
       top: 0;
-      left: 0;
+      left: 50%;
+      margin-left: -10px;
     }
     li {
       list-style: none;
@@ -84,16 +91,15 @@ footer {
   }
 
   address {
-    text-align: left;
-    display: inline-block;
     vertical-align: top;
     font-style: normal;
-    width: 63%;
+    margin-bottom: 20px;
+    padding: 0 30px;
     strong {
       font-weight: normal;
       text-transform: uppercase;
       font-size: 20px;
-      line-height: 20px;
+      line-height: 24px;
       display: block;
       margin-bottom: 20px;
     }
@@ -106,19 +112,111 @@ footer {
     .size(230px, 63px);
     .no-text();
     margin: 15px 0 0 0;
-    background: url("@{images-url}/logo.png") no-repeat;
     background-size: 230px auto;
-    background-position: -2px -86px;
+    background: url("@{images-url}/logo.png") no-repeat -2px -86px;
     display: inline-block;
     &:hover{
-      background-position: -2px -8px;
+      background-position: -2px -11px;
     }
   }
 
   .logo-column {
-    text-align: right;
-    display: inline-block;
     vertical-align: top;
-    width: 36%;
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  #content-wrapper {
+      padding-bottom: 380px;
+  }
+
+  footer {
+    margin-top: -380px;
+    height: 380px;
+
+    .contacts-column {
+      display: inline-block;
+      width: 250px;
+      margin-right: 25%;
+    }
+
+    .contacts-list {
+      li {
+        padding-left: 40px;
+        i {
+          top: 0;
+        }
+      }
+    }
+
+    .phones-list {
+      padding: 0 0 0 30px;
+      display: inline-block;
+      width: 225px;
+      margin-bottom: 20px;
+
+      li {
+        padding-top: 5px;
+      }
+
+      i {
+        top: 0;
+        left: 0;
+      }
+    }
+
+    address {
+      display: inline-block;
+      width: 65%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #content-wrapper {
+      padding-bottom: 170px;
+  }
+
+  footer {
+    margin-top: -170px;
+    height: 170px;
+
+    .left-column {
+      width: 45%;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .right-column {
+      width: 54%;
+      display: inline-block;
+      text-align: right;
+    }
+
+    .contacts-column {
+      margin: 0;
+      width: 45%;
+    }
+
+    .phones-list {
+      width: 47%;
+    }
+
+    .social-links {
+      display: inline-block;
+    }
+
+    address {
+      text-align: left;
+      padding: 0;
+      margin: 0;
+    }
+
+    .logo-column {
+      display: inline-block;
+      width: 34%;
+      text-align: right;
+    }
   }
 }

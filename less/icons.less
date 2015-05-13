@@ -25,9 +25,9 @@
 
 .icon-footer-phone {
   .icon();
-  .square(24px);
-  background-position: -29px -35px;
-  background-size: 250px;
+  .square(22px);
+  background-position: -26px -31px;
+  background-size: 220px;
 }
 
 .icon-small-phone {
@@ -44,7 +44,7 @@
   background-position: -4px -123px;
   background-size: 450px;
   &:hover {
-    background-position: -55px -122px;
+    background-position: -55px -121px;
   }
 }
 
@@ -56,15 +56,37 @@
   background-size: 240px;
 }
 
-.icon-email {
-  .icon();
-  .square(24px);
-  background-position: -29px 1px;
-}
-
 .icon-skype {
   .icon();
-  .square(24px);
+  background-size: 400px;
+  background-position: 1px 1px;
+}
+
+.icon-email {
+  .icon();
+  background-size: 400px;
+  background-position: -23px 1px;
+}
+
+@media only screen and (min-width: 768px) {
+  .icon-email {
+    .icon();
+    .square(24px);
+    background-size: inherit;
+    background-position: -29px 1px;
+  }
+
+  .icon-skype {
+    .icon();
+    background-size: inherit;
+    .square(24px);
+  }
+
+  .icon-footer-phone {
+    .square(24px);
+    background-position: -29px -35px;
+    background-size: 250px;
+  }
 }
 
 .icon-time {

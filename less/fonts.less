@@ -3,28 +3,23 @@
 .include-custom-font(@family: arial, @weight: normal, @style: normal){
     @font-face{
         font-family: @family;
-        src:url('fonts/@{family}/@{family}.eot');
-        src:url('fonts/@{family}/@{family}.eot?#iefix') format('embedded-opentype'),
-            url('fonts/@{family}/@{family}.woff') format('woff'),
-            url('fonts/@{family}/@{family}.ttf') format('truetype'),
-            url('fonts/@{family}/@{family}.svg#icon') format('svg');
+        src: url('../fonts/@{family}.ttf') format('truetype');
         font-weight: @weight;
         font-style: @style;
     }
 }
 
-.include-custom-font("MyriadProRegular");
-.include-custom-font("MyriadProBold");
-.include-custom-font("MyriadProBoldItalic");
-.include-custom-font("MyriadProItalic");
-.include-custom-font("MyriadProSemiBold");
-.include-custom-font("MyriadProSemiBoldItalic");
+.include-custom-font("Roboto-Regular");
+.include-custom-font("Roboto-Medium", bold);
+.include-custom-font("Roboto-Bold", bold);
+.include-custom-font("Roboto-Black", bold);
 
 @font-size-default: 14px;
 @font-line-height-default: 14px;
-@font-family-default: "MyriadProRegular", Arial, sans-serif;
-@font-family-times-new-roman: "Times New Roman", Arial, sans-serif;
-@font-family-myriad-pro-semi-bold: "MyriadProSemiBold", Arial, sans-serif;
+@font-family-default: "Roboto-Regular", Arial, sans-serif;
+@font-family-default-medium: "Roboto-Medium", Arial, sans-serif;
+@font-family-default-bold: "Roboto-Bold", Arial, sans-serif;
+@font-family-roboto-black: "Roboto-Black", Arial, sans-serif;
 
 .default-font(){
   font-family: @font-family-default;

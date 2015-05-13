@@ -8,7 +8,7 @@ header {
     text-align: center;
     position: relative;
     margin: 0 auto;
-    padding: 10px 10px 20px 10px;
+    padding: 5px;
   }
 
   .logo {
@@ -22,7 +22,7 @@ header {
   .search-form {
     display: none;
     position: relative;
-    margin: 7px 0 0 0;
+    margin: 23px 0 0 0;
 
     input {
       .bordered(@color-light-gray, @color-light-gray, @color-light-gray, @color-light-gray);
@@ -49,11 +49,13 @@ header {
       right: 0;
       background-color: @color-medium-gray;
       &:hover {
-        background-color: @color-light-gray;
         outline: 0 none;
+        i {
+          background-position: -29px -65px;
+        }
       }
       i {
-        margin-top: 5px;
+        margin-top: 6px;
       }
     }
   }
@@ -65,10 +67,10 @@ header {
   .mobile-nav {
     display: inline-block;
     float: right;
-    margin-top: 20px;
+    margin-top: 13px;
     i {
       cursor: pointer;
-      margin-right: 15px;
+      margin-right: 10px;
     }
   }
 
@@ -87,6 +89,7 @@ header {
       width: 100%;
       border-bottom: 1px solid @color-white;
       a {
+        font-family: @font-family-default-medium;
         display: block;
         padding: 23px 0;
         color: @color-white;
@@ -107,13 +110,21 @@ header {
 @media only screen and (min-width: 480px) {
 
   header {
+
+    .container {
+      padding: 10px 10px 20px 10px;
+    }
+
     .logo {
       .size(240px, 70px);
       background-size: 240px auto;
     }
 
-    .mobile-nav i {
+    .mobile-nav {
+      margin-top: 20px;
+      i {
         margin-right: 23px;
+      }
     }
   }
 }
@@ -151,7 +162,7 @@ header {
       display: inline-block;
       padding: 0 0 0 60px;
       float: right;
-      margin-left: 20px;
+      margin: 10px 0 0 20px;
 
       i {
         position: absolute;
@@ -163,10 +174,12 @@ header {
       a {
         display: block;
         text-decoration: none;
-        font-family: @font-family-times-new-roman;
         font-size: 24px;
-        line-height: 28px;
+        line-height: 35px;
         color: @color-gray;
+        &:hover {
+          color: @color-dark-gray;
+        }
       }
     }
 
