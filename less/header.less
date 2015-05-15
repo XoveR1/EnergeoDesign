@@ -87,7 +87,6 @@ header {
       list-style: none;
       background: @color-green;
       width: 100%;
-      border-bottom: 1px solid @color-white;
       a {
         font-family: @font-family-default-medium;
         display: block;
@@ -195,17 +194,45 @@ header {
       ul {
         display: inline-block;
         height: 44px;
-        overflow: hidden;
       }
 
       li:hover, li.active {
-        background: @color-green;
-        .rounded(10px 10px 0 0);
         a {
           color: @color-white;
         }
         ul {
           display: block;
+        }
+      }
+
+      li.active {
+        background: @color-green;
+      }
+
+      & > ul > li {
+        .hvr-fade(@color-green);
+      }
+
+      li {
+        list-style: none;
+        display: inline-block;
+        width: auto;
+        background: @color-white;
+        border: none;
+        .rounded(10px 10px 0 0);
+        a {
+          padding: 15px 20px 15px 20px;
+          font-weight: bold;
+          color: @color-dark-gray;
+          font-size: 16px;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+        ul {
+          transition: background .25s ease-in-out;
+          -moz-transition: background .25s ease-in-out;
+          -webkit-transition: background .25s ease-in-out;
+          display: none;
           position: absolute;
           left: 0;
           bottom: -37px;
@@ -217,31 +244,12 @@ header {
             background: @color-green;
           }
           a {
+            .hvr-underline-from-center(@color-white);
+            padding: 15px 20px 5px 20px;
+            margin-bottom: 10px;
             font-weight: normal;
             text-transform: capitalize;
-            &:hover {
-              text-decoration: underline;
-            }
           }
-        }
-      }
-
-      li {
-        list-style: none;
-        display: inline-block;
-        width: auto;
-        background: @color-white;
-        border: none;
-        a {
-          padding: 14px 20px 15px 20px;
-          font-weight: bold;
-          color: @color-dark-gray;
-          font-size: 16px;
-          text-transform: uppercase;
-          text-decoration: none;
-        }
-        ul {
-          display: none;
         }
       }
     }
