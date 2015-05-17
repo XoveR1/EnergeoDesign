@@ -38,7 +38,10 @@ function MainSlider(){
         var $article = $(self.sliderID + ' .active article');
         delay = delay || 100;
         if($article.length == 0){
-            $article = $(self.sliderID + ' article').first();
+            console.log('Wait active slide...')
+            setTimeout(function(){
+                self.animateArticle(delay);
+            }, 100);
         }
         $article.css('marginTop', '-20%')
             .show()
