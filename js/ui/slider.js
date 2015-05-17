@@ -22,12 +22,15 @@ function MainSlider(){
             afterLazyLoad: function(){
                 self.$slider.css('height', 'auto');
                 self.animateArticle();
+                setTimeout(function(){
+                    self.$owl.reload();
+                    console.log('reload');
+                }, 100);
             },
             afterMove: function(){
                 self.animateArticle(600);
             }
         });
-
         this.$owl = this.$sliderFrame.data('owlCarousel');
     };
 
