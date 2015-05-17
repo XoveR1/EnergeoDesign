@@ -7,6 +7,8 @@
     z-index: 0;
     display: block;
     position: relative;
+    overflow: hidden;
+    max-height: 531px;
     img {
       width: 100%;
     }
@@ -28,23 +30,24 @@
     .arrow-next {
       .slider-arrow();
       .rounded(5px 0 0 5px);
-      right: 0;
+      right: -4.6%;
     }
 
     .arrow-prev {
       .slider-arrow();
       .rounded(0 5px 5px 0);
-      left: 0;
+      left: -4.6%;
     }
 
     article {
       position: absolute;
-      top: 16%;
+      top: 0;
       left: 7%;
       width: 80%;
       background: rgba(255, 255, 255, 0.8);
       padding: 20px;
       color: @color-dark;
+      display: none;
 
       .container {
         max-height: 80px;

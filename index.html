@@ -5,8 +5,8 @@
     <title>Energeo</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet/less" type="text/css" href="less/styles.less"/>
-    <script src="js/less.min.js" type="text/javascript"></script>
+    <link rel="stylesheet/less" type="text/css" href="less/styles.less?time=123123123"/>
+    <script src="js/libs/less.min.js" type="text/javascript"></script>
     <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body class="on-allowed-animations">
@@ -58,18 +58,46 @@
             </nav>
         </header>
         <div id="slider-block">
-            <div class="slider-frame">
-                <img src="content/slider1.jpg"/>
-                <article>
-                    <div class="container">
-                        <h1>NIBE ENERGY SYSTEMS - лучшее отопительное оборудование  для часного сектора</h1>
-                        <p>
-                            NIBE - является одной из ведущих в Европе компаний
-                            по изготовлению отопительного оборудования для частного сектора
-                        </p>
-                    </div>
-                    <a class="read-more" href="#">Подробнее</a>
-                </article>
+            <div class="frames-container">
+                <div class="slider-frame">
+                    <img class="lazyOwl" data-src="content/slider1.jpg"/>
+                    <article>
+                        <div class="container">
+                            <h1>NIBE ENERGY SYSTEMS - лучшее отопительное оборудование  для часного сектора</h1>
+                            <p>
+                                NIBE - является одной из ведущих в Европе компаний
+                                по изготовлению отопительного оборудования для частного сектора
+                            </p>
+                        </div>
+                        <a class="read-more" href="#">Подробнее</a>
+                    </article>
+                </div>
+                <div class="slider-frame">
+                    <img src="content/slider1.jpg"/>
+                    <article>
+                        <div class="container">
+                            <h1>NIBE ENERGY SYSTEMS - лучшее отопительное оборудование  для часного сектора</h1>
+                            <p>
+                                NIBE - является одной из ведущих в Европе компаний
+                                по изготовлению отопительного оборудования для частного сектора
+                            </p>
+                        </div>
+                        <a class="read-more" href="#">Подробнее</a>
+                    </article>
+                </div>
+                <div class="slider-frame">
+                    <img src="content/slider1.jpg"/>
+                    <article>
+                        <div class="container">
+                            <h1>NIBE ENERGY SYSTEMS - лучшее отопительное оборудование  для часного сектора</h1>
+                            <p>
+                                NIBE - является одной из ведущих в Европе компаний
+                                по изготовлению отопительного оборудования для частного сектора
+                            </p>
+                        </div>
+                        <a class="read-more" href="#">Подробнее</a>
+                    </article>
+                </div>
             </div>
             <a class="arrow-next" href="#next">
                 <i class="icon-arrow-right"></i>
@@ -232,5 +260,9 @@
         </div>
     </div>
 </footer>
+<script src="js/libs/jquery-2.1.4.min.js" type="text/javascript"></script>
+<script src="js/libs/jquery.transit.min.js" type="text/javascript"></script>
+<script src="js/libs/owl.carousel.min.js" type="text/javascript"></script>
+<script src="js/ui/slider.js" type="text/javascript"></script>
 </body>
 </html>
