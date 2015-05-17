@@ -21,15 +21,16 @@ header {
 
   .search-form {
     display: none;
-    position: relative;
-    margin: 23px 0 0 0;
+    position: absolute;
+    margin: 23px 0 10px -145px;
+    left: 50%;
+    top: 50px;
 
     input {
       .bordered(@color-light-gray, @color-light-gray, @color-light-gray, @color-light-gray);
       .border-radius(5px, 5px, 5px, 5px);
       padding: 14px 45px 14px 10px;
-      min-width: 350px;
-      width: auto;
+      min-width: 250px;
       display: block;
 
       &:focus {
@@ -62,6 +63,29 @@ header {
 
   .phones {
     display: none;
+    position: absolute;
+    padding: 0 0 0 60px;
+    margin: 10px 0 0 -140px;
+    top: 55px;
+    left: 50%;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -25px;
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+      font-size: 24px;
+      line-height: 35px;
+      color: @color-gray;
+      &:hover {
+        color: @color-dark-gray;
+      }
+    }
   }
 
   .mobile-nav {
@@ -87,6 +111,7 @@ header {
       list-style: none;
       background: @color-green;
       width: 100%;
+      border-bottom: 1px solid @color-white;
       a {
         font-family: @font-family-default-medium;
         display: block;
@@ -112,6 +137,13 @@ header {
 
     .container {
       padding: 5px;
+    }
+
+    .search-form {
+      margin-left: -185px;
+      input{
+        min-width: 350px;
+      }
     }
 
     .logo {
@@ -144,6 +176,10 @@ header {
     .search-form {
       display: inline-block;
       float: right;
+      position: relative;
+      top: auto;
+      left: auto;
+      margin: 23px 0 0 0;
       input {
         min-width: 240px;
       }
@@ -152,27 +188,10 @@ header {
     .phones {
       position: relative;
       display: inline-block;
-      padding: 0 0 0 60px;
       float: right;
-      margin: 10px 0 0 20px;
-
-      i {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        margin-top: -25px;
-      }
-
-      a {
-        display: block;
-        text-decoration: none;
-        font-size: 24px;
-        line-height: 35px;
-        color: @color-gray;
-        &:hover {
-          color: @color-dark-gray;
-        }
-      }
+      top: auto;
+      left: auto;
+      margin-left: 10px;
     }
 
     nav {

@@ -18,7 +18,7 @@
   width: 41px;
   background-position: -2px -64px;
   background-size: 446px;
-  &:hover {
+  &:hover, &.active {
     background-position: -52px -64px;
   }
 }
@@ -43,7 +43,7 @@
   width: 41px;
   background-position: -4px -123px;
   background-size: 450px;
-  &:hover {
+  &:hover, &.active {
     background-position: -55px -121px;
   }
 }
@@ -127,8 +127,10 @@
   display: inline-block;
   height: 41px;
   width: 41px;
-  &:hover span {
-    background: @color-dark-gray;
+  &:hover, &.active {
+    span {
+      background: @color-dark-gray;
+    }
   }
   span {
     background: @color-gray;
