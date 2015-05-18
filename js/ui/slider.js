@@ -17,7 +17,7 @@ function MainSlider(){
             rewindSpeed: 500,
             transitionStyle : "fadeUp",
             addClassActive: true,
-            //autoPlay: 10000,
+            autoPlay: 10000,
             stopOnHover: true,
             afterLazyLoad: function(){
                 self.$slider.css('height', 'auto');
@@ -27,8 +27,11 @@ function MainSlider(){
                     console.log('reload');
                 }, 100);
             },
-            afterMove: function(){
+            afterUpdate: function () {
                 self.animateArticle(600);
+            },
+            afterMove: function(){
+                self.animateArticle(1);
             }
         });
         this.$owl = this.$sliderFrame.data('owlCarousel');
@@ -60,11 +63,13 @@ function MainSlider(){
         $arrow.transition({ x: '-100%', delay: 0, duration: 200 });
     };
 
-    $(document).on('click', this.sliderID + ' .arrow-next', function(){
+    $(document).on('click', this.sliderID + ' .arrow-next', function(e){
+        e.preventDefault();
         self.$owl.next();
     });
 
-    $(document).on('click', this.sliderID + ' .arrow-prev', function(){
+    $(document).on('click', this.sliderID + ' .arrow-prev', function(e){
+        e.preventDefault();
         self.$owl.prev();
     });
 

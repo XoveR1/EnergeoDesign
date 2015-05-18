@@ -99,27 +99,34 @@
   background-position: -1px -33px;
 }
 
-.icon-facebook {
+.icon-social(){
   .icon();
-  .square(35px);
+  .square(33px);
+  .rounded(50%);
+  &:hover {
+    border-color: @color-green;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.75) inset, 0 2px 4px rgba(144, 177, 78, 0.8);
+    outline: 0 none;
+  }
+}
+
+.icon-facebook {
+  .icon-social();
   background-position: -3px -205px;
 }
 
 .icon-vk {
-  .icon();
-  .square(35px);
+  .icon-social();
   background-position: -49px -205px;
 }
 
 .icon-mail-ru {
-  .icon();
-  .square(35px);
-  background-position: -92px -205px;
+  .icon-social();
+  background-position: -93px -205px;
 }
 
 .icon-odnoklasniki {
-  .icon();
-  .square(35px);
+  .icon-social();
   background-position: -138px -205px;
 }
 

@@ -134,6 +134,7 @@ header {
 @media only screen and (min-width: 480px) {
 
   header {
+    position: relative;
 
     .container {
       padding: 5px;
@@ -156,7 +157,6 @@ header {
 
 @media only screen and (min-width: 768px) {
   header {
-    position: relative;
 
     .container {
       width: 90%;
@@ -237,6 +237,16 @@ header {
           text-transform: uppercase;
           text-decoration: none;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    li {
+      a {
+        .hvr-underline-from-center(@color-white);
       }
     }
   }
