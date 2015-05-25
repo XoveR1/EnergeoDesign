@@ -39,9 +39,11 @@
 .products-list {
   display: table;
   vertical-align: top;
+  width: 100%;
   aside {
     display: table-cell;
     width: 260px;
+    vertical-align: top;
   }
   section {
     display: table-cell;
@@ -163,6 +165,87 @@
             &:hover {
               color: @color-white;
             }
+          }
+        }
+      }
+    }
+  }
+
+  .reviews-block {
+    padding: 20px 0;
+    h2 {
+      text-transform: uppercase;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 26px;
+    }
+    .review-item {
+      .rounded(10px);
+      .box-shadow(0 2px 0 rgba(0,0,0,0.2));
+      position: relative;
+      min-height: 360px;
+      padding: 20px;
+      margin-top: 20px;
+      font-family: @font-family-myriadpro-regular;
+      font-size: 16px;
+      line-height: 18px;
+      color: @color-white;
+      background: @color-green url("@{images-url}/review_bg.png") no-repeat;
+      background-size: 100% auto;
+      p {
+        margin: 0 0 20px 0;
+      }
+      .icon-apostrophes {
+        display: block;
+        margin: 0 auto 20px;
+      }
+      .author {
+        text-align: right;
+        text-transform: uppercase;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
+  }
+
+  .products-articles {
+    padding: 0 0 0 20px;
+    article {
+      display: inline-block;
+      width: 42%;
+      .rounded(10px);
+      .box-shadow(0 2px 0 rgba(0, 0, 0, 0.1));
+      background: @color-white;
+      padding: 30px 30px 10px 30px;
+      margin: 0 20px 20px 0;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+      h1 {
+        color: @color-green;
+        font-family: @font-family-roboto-black;
+        margin: 10px 0 40px 0;
+        font-size: 24px;
+        font-weight: normal;
+      }
+      img {
+        float: left;
+        margin: 0 20px 20px 0;
+      }
+      ul {
+        li {
+          list-style: none;
+          position: relative;
+          padding: 0 0 0 125px;
+          margin-bottom: 25px;
+          &:before {
+            position: absolute;
+            left: 110px;
+            top: 3px;
+            content: "";
+            .square(8px);
+            background: @color-green;
           }
         }
       }

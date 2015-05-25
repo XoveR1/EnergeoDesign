@@ -3,13 +3,14 @@
 .include-custom-font(@family: arial, @weight: normal, @style: normal){
     @font-face{
         font-family: @family;
-        src: url('../fonts/@{family}.ttf') format('truetype');
+        src: url('../../fonts/@{family}.ttf') format('truetype');
         font-weight: @weight;
         font-style: @style;
     }
 }
 
 .include-custom-font("Roboto-Regular");
+.include-custom-font("MyriadProRegular");
 .include-custom-font("Roboto-Medium", bold);
 .include-custom-font("Roboto-Bold", bold);
 .include-custom-font("Roboto-Black", bold);
@@ -20,6 +21,7 @@
 @font-family-default-medium: "Roboto-Medium", Arial, sans-serif;
 @font-family-default-bold: "Roboto-Bold", Arial, sans-serif;
 @font-family-roboto-black: "Roboto-Black", Arial, sans-serif;
+@font-family-myriadpro-regular: "MyriadProRegular", Arial, sans-serif;
 
 .default-font(){
   font-family: @font-family-default;
