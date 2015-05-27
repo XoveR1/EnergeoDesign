@@ -27,9 +27,11 @@ body > #main-wrapper {
 }
 
 #content-block {
-  margin: 0 auto;
-    padding-top: 60px;
-  max-width: @content-max-width;
+  padding-top: 60px;
+  .container {
+    margin: 0 auto;
+    max-width: @content-max-width;
+  }
 }
 
 @media only screen and (min-width: 480px) {

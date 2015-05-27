@@ -1,0 +1,27 @@
+.breadcrumbs {
+  display: none;
+  padding: 20px 0 20px 10px;
+  a, span {
+    display: inline-block;
+    color: @color-gray;
+    text-decoration: none;
+  }
+  a:last-child {
+    color: @color-green;
+  }
+  a:hover{
+    text-decoration: underline;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .breadcrumbs {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+  .breadcrumbs {
+    padding-left: 0;
+  }
+}
