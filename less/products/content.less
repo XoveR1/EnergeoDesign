@@ -1,5 +1,5 @@
 .products-list-header {
-  span {
+  h1 span {
     display: block;
     background: @color-white;
     .opacity(0.8);
@@ -18,13 +18,12 @@
   vertical-align: top;
   width: 100%;
   aside {
-    background: @color-light-green;
     display: block;
-    width: auto;
+    width: 260px;
     padding: 20px 20px 0;
     position: absolute;
     top: 0;
-    right: 100%;
+    left: -300px;
     z-index: 100;
   }
   section {
@@ -255,11 +254,10 @@
       vertical-align: top;
       background: transparent;
       display: table-cell;
-      width: 260px;
       padding: 0 20px 0 0;
       position: relative;
       top: auto;
-      right: auto;
+      left: auto;
     }
   }
 }
