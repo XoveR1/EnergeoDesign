@@ -35,15 +35,12 @@
     border: 1px solid @color-border-gray;
     .rounded(5px);
     position: relative;
-    &:hover {
+    &:hover, &.active {
       background: @color-green;
       color: @color-white;
       border-color: @color-green;
       span:after {
         border-top-color: @color-white;
-      }
-      ul {
-        display: block;
       }
     }
     span {
@@ -52,12 +49,13 @@
       line-height: 22px;
       text-transform: uppercase;
       display: inline-block;
-      max-width: 150px;
+      max-width: 195px;
+      overflow: hidden;
       &:after {
         content: '';
         .icon-arrow-down(6px, @color-gray);
         position: absolute;
-        right: 30px;
+        right: 25px;
         top: 50%;
       }
     }
@@ -72,9 +70,11 @@
       }
       display: none;
       position: absolute;
-      top: 75px;
+      top: 100%;
+      margin-top: 10px;
       left: 0;
       width: 100%;
+      z-index: 1;
       background: @color-category-dropdown-bg;
       .rounded(5px);
       li {
@@ -82,6 +82,9 @@
         border-bottom: 1px solid @color-category-dropdown-border;
         &:last-child {
           border: none;
+        }
+        &.active {
+          display: none;
         }
         a {
           display: block;
@@ -115,7 +118,7 @@
       span {
         position: absolute;
         top: 20px;
-        right: 30px;
+        right: 25px;
         display: inline-block;
         background: @color-green;
         color: @color-white;
@@ -240,12 +243,12 @@
     h1 {
       margin: 0 auto;
       max-width: @content-max-width;
-    }
-    span {
-      display: inline-block;
-      padding: 20px;
-      min-width: 300px;
-      margin: 0;
+      span {
+        display: inline-block;
+        padding: 20px;
+        min-width: 300px;
+        margin: 0;
+      }
     }
   }
 
@@ -254,7 +257,7 @@
       vertical-align: top;
       background: transparent;
       display: table-cell;
-      padding: 0 20px 0 0;
+      padding: 0 20px 0 10px;
       position: relative;
       top: auto;
       left: auto;

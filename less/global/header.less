@@ -14,6 +14,7 @@ header {
   .logo {
     .size(55px, 55px);
     .no-text();
+    margin-left: 8px;
     background-size: 210px auto;
     background: url("@{images-url}/logo.png") no-repeat -2px -9px;
     float: left;
@@ -169,6 +170,7 @@ header {
     }
 
     .logo {
+      margin-left: 0;
       .size(260px, 81px);
       background-size: 260px auto;
     }
@@ -208,7 +210,7 @@ header {
         height: 44px;
       }
 
-      li:hover, li.active {
+      li:hover {
         a {
           color: @color-white;
         }
@@ -216,10 +218,14 @@ header {
 
       li.active {
         background: @color-green;
+        a {
+          color: @color-white;
+        }
       }
 
       & > ul > li {
         .hvr-fade(@color-green);
+        vertical-align: top;
       }
 
       li {
@@ -228,9 +234,9 @@ header {
         width: auto;
         background: @color-white;
         border: none;
-        .rounded(10px 10px 0 0);
+        .rounded(8px);
         a {
-          padding: 15px 14px 15px 14px;
+          padding: 14px;
           font-weight: bold;
           color: @color-dark-gray;
           font-size: 14px;
@@ -257,14 +263,20 @@ header {
 @media only screen and (min-width: 992px) {
   header {
     nav {
-      li:hover, li.active {
+      li:hover {
         ul {
           display: block;
+        }
+        &.has-sub-nav {
+          .rounded(8px 8px 0 0);
+          a {
+            padding-bottom: 17px;
+          }
         }
       }
       li {
         a {
-          padding: 15px 20px 15px 20px;
+          padding: 14px 20px 14px 20px;
           font-size: 16px;
         }
         ul {

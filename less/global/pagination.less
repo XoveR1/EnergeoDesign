@@ -71,20 +71,20 @@
         letter-spacing: -3px;
         color: @color-light-green;
         background: @color-pagination-sub-light;
-        &:hover {
-          background: @color-green;
-          span {
-            font-family: @font-family-default;
-            color: @color-white;
-          }
+      }
+      a:hover, &.active > a {
+        background: @color-green;
+        span {
+          font-family: @font-family-default;
+          color: @color-white;
         }
       }
       ul {
         display: none;
         text-align: center;
         position: absolute;
-        top: 37px;
-        left: -25px;
+        top: 48px;
+        left: -46%;
         z-index: 101;
         li {
           list-style: none;
@@ -113,8 +113,10 @@
             border: none;
             background: @color-pagination-sub-dark;
             color: @color-white;
+            line-height: 20px;
+            letter-spacing: 1px;
             padding: 10px;
-            width: 60px;
+            width: 80px;
             &:hover {
               text-decoration: none;
               background: @color-pagination-sub-light;
