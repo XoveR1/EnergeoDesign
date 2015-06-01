@@ -21,7 +21,7 @@
     display: block;
     width: 260px;
     padding: 20px 20px 0;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: -300px;
     z-index: 100;
@@ -130,9 +130,6 @@
       }
       &:hover, &.active {
         background: @color-products-nav-bg-hover;
-        ul {
-          display: block;
-        }
       }
       ul {
         display: none;
@@ -156,6 +153,7 @@
   }
 
   .reviews-block {
+    display: none;
     padding: 20px 0;
     h2 {
       text-transform: uppercase;
@@ -261,7 +259,18 @@
       position: relative;
       top: auto;
       left: auto;
+      nav{
+        li {
+          &.active ul{
+            display: block;
+          }
+        }
+      }
     }
+  }
+
+  .reviews-block {
+    display: block;
   }
 }
 

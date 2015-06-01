@@ -4,6 +4,7 @@
         var dropdownTriggerSelector = this.selector;
         var blockToShowSelector = options.blockToShowSelector || 'ul';
         var blockToChangeSelector = options.blockToChangeSelector || 'span';
+        var itemForActiveSelector = options.itemForActiveSelector || 'li';
         var itemToPickSelector = options.itemToPickSelector || 'a';
         var activeClassToAdd = options.activeClassToAdd || 'active';
         var isSelectable = options.isSelectable !== false;
@@ -43,13 +44,14 @@
         $(document).on('click', itemToPickFullSelector, function (e) {
             e.preventDefault();
             var $itemToPick = $(this),
+                $itemForActive = $itemToPick.closest(itemForActiveSelector),
                 $dropdownContainer = $itemToPick.closest(dropdownTriggerSelector);
 
             setTimeout(function () {
                 hide($dropdownContainer);
                 if (isSelectable) {
                     var $blockToChange = $dropdownContainer.find(blockToChangeSelector);
-                    $itemToPick.addClass(activeClassToAdd)
+                    $itemForActive.addClass(activeClassToAdd)
                         .siblings()
                         .removeClass(activeClassToAdd);
                     $blockToChange.text($itemToPick.text());
