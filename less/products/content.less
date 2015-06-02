@@ -200,16 +200,20 @@
       background: @color-white;
       padding: 30px 30px 10px 30px;
       margin: 0 10px 20px 10px;
-      h1 {
-        color: @color-green;
-        font-family: @font-family-roboto-black;
+      h1{
         margin: 10px 0 40px 0;
-        font-size: 24px;
-        font-weight: normal;
+        a {
+          color: @color-green;
+          font-family: @font-family-roboto-black;
+          font-size: 24px;
+          font-weight: normal;
+          text-decoration: none;
+        }
       }
-      img {
+      .image-container {
         float: left;
         margin: 0 20px 20px 0;
+        display: inline-block;
       }
       ul {
         li {
@@ -217,6 +221,7 @@
           position: relative;
           padding: 0 0 0 125px;
           margin-bottom: 25px;
+          line-height: 16px;
           &:before {
             position: absolute;
             left: 110px;
@@ -267,10 +272,10 @@
         }
       }
     }
-  }
 
-  .reviews-block {
-    display: block;
+    .reviews-block {
+      display: block;
+    }
   }
 }
 

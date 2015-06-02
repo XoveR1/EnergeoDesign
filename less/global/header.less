@@ -269,7 +269,7 @@ header {
         }
         &.has-sub-nav {
           .rounded(8px 8px 0 0);
-          a {
+          & > a {
             padding-bottom: 17px;
           }
         }
@@ -293,13 +293,14 @@ header {
           overflow: hidden;
           li {
             background: transparent;
-          }
-          a {
-            .hvr-underline-from-center(@color-white);
-            padding: 15px 20px 5px 20px;
-            margin-bottom: 10px;
-            font-weight: normal;
-            text-transform: capitalize;
+            a {
+              color: @color-dark-gray;
+              .hvr-underline-from-center(@color-white);
+              padding: 15px 20px 5px 20px;
+              margin-bottom: 10px;
+              font-weight: normal;
+              text-transform: capitalize;
+            }
           }
         }
       }

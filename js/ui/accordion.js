@@ -26,7 +26,7 @@
                     $itemToHide.removeClass(activeClassToAdd);
                 });
             }
-        }
+        };
 
         var toggleLikeAccordion = function($itemToAccordion) {
             var $blockToShow = $itemToAccordion.siblings(blockToShowTag),
@@ -47,9 +47,7 @@
             e.preventDefault();
             var $itemToAccordion = $(this);
 
-            if(isMobileScreen()){
-
-            } else {
+            if(!isMobileScreen()){
                 toggleLikeAccordion($itemToAccordion);
             }
         });
@@ -65,4 +63,5 @@
 
 $(document).ready(function(){
     $('aside nav').customAccordion();
+    $('.products-articles article img').reflect();
 });

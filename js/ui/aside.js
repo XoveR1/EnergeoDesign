@@ -7,35 +7,36 @@ function AsideNav(){
     var self = this;
     this.asideState = STATE_CLOSED;
     this.$asideBlock = $('.products-list aside');
-    this.$mainWrapper = $('#main-wrapper, footer');
-    this.$body = $('body');
-    self.$body.css('overflow-x', 'hidden');
+    this.$contents = $('#content-wrapper, footer .container');
+    this.$wrappers = $('#main-wrapper, footer');
+
+    self.$wrappers.css('overflow-x', 'hidden');
 
     this.resetStyles = function(){
-        self.$mainWrapper.removeAttr('style');
+        self.$contents.removeAttr('style');
         self.$asideBlock.removeAttr('style');
-        self.$body.css('width', 'auto');
+        self.$wrappers.css('width', 'auto');
         self.asideState = STATE_CLOSED;
     };
 
-    this.removeSelecttion = function(){
+    this.removeSelection = function(){
         document.getSelection().removeAllRanges();
     };
 
     this.isMobileScreen = function(){
-        return self.$mainWrapper.width() <= MOBILE_WIDTH;
+        return self.$contents.width() <= MOBILE_WIDTH;
     };
 
     $(window).on("swiperight", function(e) {
         if(!self.isMobileScreen()){return}
         e.preventDefault();
-        self.removeSelecttion();
+        self.removeSelection();
         if(self.asideState == STATE_CLOSED) {
-            var windowWidth = this.$mainWrapper.width();
+            var windowWidth = this.$contents.width();
             self.asideState = STATE_ANIMATION;
 
-            self.$body.css('width', windowWidth);
-            self.$mainWrapper.css('width', windowWidth).transition({
+            self.$wrappers.css('width', windowWidth);
+            self.$contents.css('width', windowWidth).transition({
                 marginLeft: '300px',
                 duration: 700
             }).queue(function(){
@@ -53,10 +54,10 @@ function AsideNav(){
     $(window).on("swipeleft", function(e) {
         if(!self.isMobileScreen()){return}
         e.preventDefault();
-        self.removeSelecttion();
+        self.removeSelection();
         if(self.asideState == STATE_OPENED) {
             self.asideState = STATE_ANIMATION;
-            self.$mainWrapper.transition({
+            self.$contents.transition({
                 marginLeft: 0,
                 duration: 700
             }).queue(function () {

@@ -21,10 +21,9 @@ function MainSlider(){
             stopOnHover: true,
             afterLazyLoad: function(){
                 self.$slider.css('height', 'auto');
-                self.animateArticle();
+                self.animateArticle(0);
                 setTimeout(function(){
                     self.$owl.reload();
-                    console.log('reload');
                 }, 100);
             },
             afterUpdate: function () {
@@ -41,7 +40,6 @@ function MainSlider(){
         var $article = $(self.sliderID + ' .active article');
         delay = delay || 100;
         if($article.length == 0){
-            console.log('Wait active slide...')
             setTimeout(function(){
                 self.animateArticle(delay);
             }, 100);
