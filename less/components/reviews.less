@@ -1,0 +1,44 @@
+.reviews-block {
+  display: none;
+  padding: 20px 0;
+  h2 {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  .review-item {
+    .rounded(10px);
+    .box-shadow(0 2px 0 rgba(0, 0, 0, 0.2));
+    position: relative;
+    min-height: 360px;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: @font-family-myriadpro-regular;
+    font-size: 16px;
+    line-height: 18px;
+    color: @color-white;
+    background: @color-green url("@{images-url}/review_bg.png") no-repeat;
+    background-size: 100% auto;
+    p {
+      margin: 0 0 20px 0;
+    }
+    .icon-apostrophes {
+      display: block;
+      margin: 0 auto 20px;
+    }
+    .author {
+      text-align: right;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .reviews-block {
+    display: block;
+  }
+}

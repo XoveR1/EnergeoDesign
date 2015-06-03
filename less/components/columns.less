@@ -1,0 +1,42 @@
+.two-columns {
+  margin-top: 10px;
+  display: table;
+  vertical-align: top;
+  width: 100%;
+
+  section {
+    display: table-cell;
+  }
+
+  aside {
+      display: block;
+      width: 260px;
+      padding: 20px 20px 0;
+      position: fixed;
+      top: 0;
+      left: -300px;
+      z-index: 100;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .two-columns{
+    aside {
+      vertical-align: top;
+      background: transparent;
+      display: table-cell;
+      padding: 0 20px 0 10px;
+      position: relative;
+      top: auto;
+      left: auto;
+    }
+  }
+}
+
+@media only screen and (min-width: 1220px) {
+  .two-columns {
+    aside {
+      padding-left: 0;
+    }
+  }
+}

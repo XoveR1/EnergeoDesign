@@ -1,34 +1,4 @@
-.products-list-header {
-  h1 span {
-    display: block;
-    background: @color-white;
-    .opacity(0.8);
-    padding: 20px 10px;
-    margin: 10px;
-    text-transform: uppercase;
-    color: @color-black;
-    font-family: @font-family-roboto-black;
-    font-size: 24px;
-  }
-}
-
 .products-list {
-  margin-top: 10px;
-  display: table;
-  vertical-align: top;
-  width: 100%;
-  aside {
-    display: block;
-    width: 260px;
-    padding: 20px 20px 0;
-    position: fixed;
-    top: 0;
-    left: -300px;
-    z-index: 100;
-  }
-  section {
-    display: table-cell;
-  }
   .category-select {
     cursor: pointer;
     padding: 10px 20px;
@@ -102,92 +72,9 @@
     }
   }
 
-  nav {
-    li {
-      position: relative;
-      list-style: none;
-      a {
-        display: block;
-        padding: 20px;
-        color: @color-gray;
-        text-decoration: none;
-        &:hover {
-          color: @color-green;
-        }
-      }
-      span {
-        position: absolute;
-        top: 20px;
-        right: 25px;
-        display: inline-block;
-        background: @color-green;
-        color: @color-white;
-        .rounded(3px);
-        font-size: 12px;
-        min-width: 15px;
-        padding: 2px;
-        text-align: center;
-      }
-      &:hover, &.active {
-        background: @color-products-nav-bg-hover;
-      }
-      ul {
-        display: none;
-        li {
-          background: @color-products-dubnav-bg;
-          border-bottom: 1px solid @color-white;
-          &:hover {
-            background: @color-products-dubnav-bg-hover;
-          }
-          a {
-            text-transform: uppercase;
-            padding: 10px 0 10px 50px;
-            color: @color-green;
-            &:hover {
-              color: @color-white;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .reviews-block {
-    display: none;
-    padding: 20px 0;
-    h2 {
-      text-transform: uppercase;
-      font-weight: normal;
-      font-size: 24px;
-      line-height: 26px;
-    }
-    .review-item {
-      .rounded(10px);
-      .box-shadow(0 2px 0 rgba(0,0,0,0.2));
-      position: relative;
-      min-height: 360px;
-      padding: 20px;
-      margin-top: 20px;
-      font-family: @font-family-myriadpro-regular;
-      font-size: 16px;
-      line-height: 18px;
-      color: @color-white;
-      background: @color-green url("@{images-url}/review_bg.png") no-repeat;
-      background-size: 100% auto;
-      p {
-        margin: 0 0 20px 0;
-      }
-      .icon-apostrophes {
-        display: block;
-        margin: 0 auto 20px;
-      }
-      .author {
-        text-align: right;
-        text-transform: uppercase;
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-      }
+  nav.aside-accordion {
+    li:first-child {
+      border-top: none;
     }
   }
 
@@ -236,49 +123,6 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
-  .products-list-header {
-    background: url("@{images-url}/headers/products.jpg");
-    height: 94px;
-    margin: 0;
-    padding: 50px 0 0 0;
-    position: relative;
-    h1 {
-      margin: 0 auto;
-      max-width: @content-max-width;
-      span {
-        display: inline-block;
-        padding: 20px;
-        min-width: 300px;
-        margin: 0;
-      }
-    }
-  }
-
-  .products-list {
-    aside {
-      vertical-align: top;
-      background: transparent;
-      display: table-cell;
-      padding: 0 20px 0 10px;
-      position: relative;
-      top: auto;
-      left: auto;
-      nav{
-        li {
-          &.active ul{
-            display: block;
-          }
-        }
-      }
-    }
-
-    .reviews-block {
-      display: block;
-    }
-  }
-}
-
 @media only screen and (min-width: 992px) {
   .products-list {
     .products-articles {
@@ -301,14 +145,6 @@
         width: 42%;
         margin-right: 1.5%;
       }
-    }
-  }
-}
-
-@media only screen and (min-width: 1220px) {
-  .products-list {
-    aside {
-      padding-left: 0;
     }
   }
 }
