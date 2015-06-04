@@ -6,7 +6,7 @@ function AsideNav(){
 
     var self = this;
     this.asideState = STATE_CLOSED;
-    this.$asideBlock = $('.products-list aside');
+    this.$asideBlock = $('.two-columns aside');
     this.$contents = $('#content-wrapper, footer .container');
     this.$wrappers = $('#main-wrapper, footer');
 

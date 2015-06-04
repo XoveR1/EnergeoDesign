@@ -23,10 +23,10 @@
           width: 100%;
           color: @color-green;
           font-family: @font-family-roboto-black;
-          font-size: 22px;
+          font-size: 24px;
           font-weight: normal;
           text-decoration: none;
-          line-height: 24px;
+          line-height: 26px;
           text-transform: uppercase;
         }
       }
@@ -48,14 +48,36 @@
   }
 }
 
+.gallery {
+  display: table;
+  .gallery-slider {
+    display: table-cell;
+    img {
+      width: 100%;
+    }
+
+    .frames-container {
+      overflow: hidden;
+      clear: both;
+      .slider-frame {
+        float: left;
+      }
+    }
+  }
+  .preview-nav {
+    display: table-cell;
+    width: 15%;
+  }
+}
+
 
 @media only screen and (min-width: 992px) {
   .references-list {
     .references-articles {
       article {
         display: inline-block;
-        width: 26%;
-        margin: 0 2% 20px 0;
+        width: 32%;
+        margin: 0 1.5% 2.8% 0;
         &:nth-child(3n) {
           margin-right: 0;
         }
@@ -68,8 +90,9 @@
   .references-list {
     .references-articles {
       article {
-//        width: 42%;
-//        margin-right: 1.5%;
+        width: 32%;
+        margin-right: 1.5%;
+        margin-bottom: 2.8%;
       }
     }
   }

@@ -18,6 +18,7 @@
     margin: 0;
     padding: 50px 0 0 0;
     position: relative;
+    background-position: 50% 50%;
     h1 {
       margin: 0 auto;
       max-width: @content-max-width;
@@ -31,10 +32,18 @@
   }
 
   .products-list-title {
-    background: url("@{images-url}/headers/products.jpg");
+    background-image: url("@{images-url}/headers/products.jpg");
   }
 
   .references-title {
-    background: url("@{images-url}/headers/references.jpg");
+    background-image: url("@{images-url}/headers/references.jpg");
   }
 }
+
+@media only screen and (min-width: 1700px) {
+  .page-title {
+    background-size: 100% auto;
+  }
+}
+
+
