@@ -1,0 +1,25 @@
+.slider-arrow(){
+  .size(4.6%, 18%);
+  background: @color-white;
+  top: 50%;
+  margin-top: -2.3%;
+  display: block;
+  position: absolute;
+  &:hover {
+    i:before, i:after {
+      background: @color-dark-gray;
+    }
+  }
+}
+
+.arrow-next {
+  .slider-arrow();
+  .rounded(5px 0 0 5px);
+  right: 0;
+}
+
+.arrow-prev {
+  .slider-arrow();
+  .rounded(0 5px 5px 0);
+  left: 0;
+}

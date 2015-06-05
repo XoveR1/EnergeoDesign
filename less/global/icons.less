@@ -179,6 +179,28 @@
   .icon-arrow(45deg, -45deg, -10%, 40% 0 0 40%);
 }
 
+.icon-close-cross {
+  position: relative;
+  .size(30px, 30px);
+  &:before, &:after {
+    content: "";
+    display: block;
+    .size(35px, 3px);
+    .rounded(1px);
+    background: @color-green;
+    position: absolute;
+    top: 15px;
+    left: -3px;
+    .box-shadow(0 0 0 5px rgba(144, 177, 78, 0.2))
+  }
+  &:before {
+    .rotation(-45deg);
+  }
+  &:after {
+    .rotation(45deg);
+  }
+}
+
 .icon-arrow-up(@size, @color) {
   width: 0;
   height: 0;
