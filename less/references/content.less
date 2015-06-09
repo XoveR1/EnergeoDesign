@@ -84,12 +84,12 @@
         list-style: none;
         img {
           width: 100%;
-          .rounded(5px);
         }
         a {
+          .rounded(5px);
           position: relative;
           display: block;
-          &:hover:before {
+          &.active:before, &:hover:before {
             position: absolute;
             content: '';
             width: 100%;
@@ -130,7 +130,11 @@
 @media only screen and (min-width: 768px) {
   .gallery-modal {
     .modal-container {
-      max-width: 60%;
+      width: 1000px;
+
+      .gallery-slider {
+        width: 850px;
+      }
     }
   }
 }

@@ -9,7 +9,7 @@
 
         var getModal = function($modalBtn){
             return $('#' + (options.modal_id || $modalBtn.data('modal-id')))
-        }
+        };
 
         var stretchOverlay = function(){
             var $modal = $(modalSelector),
@@ -33,7 +33,7 @@
         $(document).on('click', modalTriggerSelector, function(e){
             var $modal = getModal($(this));
             e.preventDefault();
-            $modal.show();
+            $modal.addClass('modal-open');
             centreModal();
             centreModal();
             stretchOverlay();
@@ -41,7 +41,11 @@
 
         $(document).on('click', overlaySelector + ',' + closeBtnSelector, function(){
             var $modal = getModal($(this));
-            $modal.hide()
+            $modal.addClass('modal-close');
+            setTimeout(function(){
+                $modal.removeClass('modal-close');
+                $modal.removeClass('modal-open');
+            }, 300);
         });
 
         $(window).on('resize', function () {
