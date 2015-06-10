@@ -1,5 +1,7 @@
 (function($) {
     $.fn.customModal = function (options) {
+        const MOBILE_WIDTH = 752;
+
         options = options || {};
         var modalTriggerSelector = this.selector;
         var modalSelector =  options.modalSelector || '.modal';
@@ -19,22 +21,56 @@
             $modalOverlay.height(windowHeight);
         };
 
+        var isMobileScreen = function(){
+            return $('body').width() <= MOBILE_WIDTH;
+        };
+
         var centreModal = function(){
             var $modalContainer = $(modalContainerSelector),
-                modalWidth = $modalContainer.width(),
-                modalHeight = $modalContainer.height();
+                modalWidth = $modalContainer.outerWidth(),
+                modalHeight = $modalContainer.outerHeight(),
+                windowHeight = $(window).height();
 
-            $modalContainer.css('marginLeft', -modalWidth / 2);
-            $modalContainer.css('marginTop', -modalHeight / 2)
-
-            console.log(modalWidth, modalHeight)
+            if(isMobileScreen()){
+                $modalContainer.css({
+                    marginTop: 0,
+                    marginLeft: 0,
+                    top: 0,
+                    left: 0,
+                });
+                if(windowHeight < modalHeight) {
+                    $modalContainer.css({
+                        height: windowHeight,
+                        overflowY: 'auto'
+                    })
+                } else {
+                    $modalContainer.css({height: 'auto'})
+                }
+            } else if(windowHeight > modalHeight){
+                $modalContainer.css({
+                    marginTop: -modalHeight / 2,
+                    marginLeft: -modalWidth / 2,
+                    top: '50%',
+                    left: '50%',
+                    height: 'auto',
+                    overflowY: 'hidden'
+                });
+            } else {
+                $modalContainer.css({
+                    marginTop: 0,
+                    marginLeft: -modalWidth / 2,
+                    top: 0,
+                    left: '50%',
+                    height: windowHeight,
+                    overflowY: 'auto'
+                });
+            }
         };
 
         $(document).on('click', modalTriggerSelector, function(e){
             var $modal = getModal($(this));
             e.preventDefault();
             $modal.addClass('modal-open');
-            centreModal();
             centreModal();
             stretchOverlay();
         });
@@ -49,8 +85,10 @@
         });
 
         $(window).on('resize', function () {
-            stretchOverlay();
-            centreModal();
+            setTimeout(function(){
+                centreModal();
+                stretchOverlay();
+            }, 220);
         });
     }
 })(jQuery);

@@ -49,11 +49,6 @@
 }
 
 .gallery {
-  display: table;
-  .gallery-left-column {
-    vertical-align: top;
-    display: table-cell;
-  }
   .gallery-slider {
     position: relative;
     img {
@@ -69,16 +64,14 @@
       position: relative;
       overflow: hidden;
       clear: both;
+      width: 100%;
       .slider-frame {
         float: left;
       }
     }
   }
   .preview-nav {
-    vertical-align: top;
-    display: table-cell;
-    width: 15%;
-    padding-left: 14px;
+    display: none;
     ul {
       li {
         list-style: none;
@@ -104,6 +97,7 @@
 }
 
 .modal-article {
+  padding: 20px;
   h1 {
     color: @color-green;
     font-family: @font-family-roboto-black;
@@ -125,15 +119,37 @@
   }
 }
 
-
+.gallery-modal {
+  .modal-container {
+    width: 100%;
+    .gallery-slider {
+      width: 100%;
+    }
+  }
+}
 
 @media only screen and (min-width: 768px) {
   .gallery-modal {
+    .gallery {
+      display: table;
+      .gallery-left-column {
+        vertical-align: top;
+        display: table-cell;
+        .gallery-slider {
+          margin: 20px 0 0 20px;
+        }
+      }
+      .preview-nav {
+        padding: 20px 20px 20px 0;
+        vertical-align: top;
+        display: table-cell;
+        width: 15%;
+      }
+    }
     .modal-container {
-      width: 1000px;
-
+      width: 700px;
       .gallery-slider {
-        width: 850px;
+        width: 540px;
       }
     }
   }
@@ -152,6 +168,15 @@
       }
     }
   }
+
+  .gallery-modal {
+    .modal-container {
+      width: 800px;
+      .gallery-slider {
+        width: 660px;
+      }
+    }
+  }
 }
 
 @media only screen and (min-width: 1152px) {
@@ -161,6 +186,26 @@
         width: 32%;
         margin-right: 1.5%;
         margin-bottom: 2.8%;
+      }
+    }
+  }
+
+  .gallery-modal {
+    .modal-container {
+      width: 900px;
+      .gallery-slider {
+        width: 730px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .gallery-modal {
+    .modal-container {
+      width: 1000px;
+      .gallery-slider {
+        width: 810px;
       }
     }
   }

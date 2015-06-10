@@ -22,7 +22,9 @@
             singleItem: true,
             slideSpeed: 500,
             rewindSpeed: 500,
-            addClassActive: true
+            addClassActive: true,
+            touchDrag: false,
+            mouseDrag: false
         });
 
         var $owl = $framesContainer.data('owlCarousel');
@@ -60,16 +62,24 @@
             return activePageItemIndex - 1;
         };
 
-        $(document).on('click', gallerySelector + ' ' + nextActionSelector, function(e){
-            e.preventDefault();
+        var nextFrame = function(){
             $owl.next();
             activePageItem(getNextPageItem());
+        };
+
+        var prevFrame = function(){
+            $owl.prev();
+            activePageItem(getPrevPageItem());
+        };
+
+        $(document).on('click', gallerySelector + ' ' + nextActionSelector, function(e){
+            e.preventDefault();
+            nextFrame();
         });
 
         $(document).on('click', gallerySelector + ' ' + prevActionSelector, function(e){
             e.preventDefault();
-            $owl.prev();
-            activePageItem(getPrevPageItem());
+            prevFrame();
         });
 
         $(document).on('click', paginationItemFullSelector + ' ' + paginationSubItemSelector, function(e){
