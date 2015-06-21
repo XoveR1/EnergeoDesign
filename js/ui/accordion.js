@@ -64,4 +64,5 @@
 $(document).ready(function(){
     $('aside nav').customAccordion();
     $('.products-articles article img').reflect();
+    $('.product-details article img').reflect();
 });
