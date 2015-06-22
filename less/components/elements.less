@@ -1,0 +1,23 @@
+article {
+  ul {
+    li {
+      list-style: none;
+      position: relative;
+      padding: 0 0 0 15px;
+      margin: 0 0 15px 0;
+      &:before {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        content: "";
+        .square(8px);
+        background: @color-green;
+      }
+    }
+  }
+
+  p {
+    margin: 15px 0;
+    line-height: 16px;
+  }
+}
