@@ -5,7 +5,7 @@
     .rounded(10px);
     .box-shadow(0 2px 0 rgba(0, 0, 0, 0.1));
     background: @color-white;
-    padding: 30px 30px 10px 30px;
+    padding: 20px;
     margin: 0 10px 20px 10px;
     h1 {
       margin: 10px 0 40px 0;
@@ -17,31 +17,83 @@
         text-decoration: none;
       }
     }
+  }
 
-    .menu {
-      margin: 0 0 30px 0;
-      border-bottom: 2px solid @color-green;
-      li {
+  .menu {
+    margin: 0 0 30px 0;
+    border-bottom: 2px solid @color-green;
+    overflow: hidden;
+    height: 26px;
+    menu {
+      width: 120%;
+    }
+    li {
+      display: inline-block;
+      list-style: none;
+      position: relative;
+      margin: 0 2% 0 0;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
         display: inline-block;
-        list-style: none;
-        position: relative;
-        margin: 0 20px 0 0;
-        a {
-          display: inline-block;
-          padding: 5px 10px;
-          line-height: 16px;
-          border-radius: 5px 5px 0 0;
-          text-decoration: none;
-          color: @color-green;
-        }
+        padding: 5px 10px;
+        line-height: 16px;
+        border-radius: 5px 5px 0 0;
+        text-decoration: none;
+        background: @color-super-light-gray;
+        color: @color-gray;
+      }
 
-        &.active a, &:hover a {
-          color: @color-white;
-          background: @color-green;
-        }
+      &.active a, &:hover a {
+        color: @color-white;
+        background: @color-green;
+      }
+    }
+  }
+
+  .product-image-desc {
+    display: block;
+
+    .image-column {
+      display: block;
+      text-align: center;
+
+      .image-container {
+        display: inline-block;
+        width: 100px;
+      }
+
+      .help-container {
+        display: block;
+        margin-bottom: 30px;
+      }
+
+      .help-link {
+        display: inline-block;
+        padding: 10px;
+        width: 130px;
+        border-radius: 8px;
+        background: @color-blue;
+        color: @color-white;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 14px;
       }
     }
 
+    .desc-column {
+      display: block;
+    }
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .product-details {
+    article {
+      padding: 50px;
+    }
     .product-image-desc {
       display: table;
       vertical-align: top;
@@ -51,25 +103,6 @@
         display: table-cell;
         width: 200px;
         vertical-align: top;
-        text-align: center;
-
-        .image-container {
-          display: inline-block;
-          width: 100px;
-        }
-
-        .help-link {
-          display: inline-block;
-          padding: 10px;
-          width: 130px;
-          border-radius: 8px;
-          background: @color-blue;
-          color: @color-white;
-          text-decoration: none;
-          text-align: center;
-          text-transform: uppercase;
-          font-size: 14px;
-        }
       }
 
       .desc-column {
@@ -78,10 +111,6 @@
       }
     }
   }
-}
-
-@media only screen and (min-width: 992px) {
-
 }
 
 @media only screen and (min-width: 1152px) {
