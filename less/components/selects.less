@@ -1,6 +1,5 @@
 .category-select {
   cursor: pointer;
-  padding: 10px 20px;
   border: 1px solid @color-border-gray;
   .rounded(5px);
   position: relative;
@@ -13,11 +12,12 @@
     }
   }
   span {
+    display: block;
+    padding: 10px 40px 10px 20px;
     font-family: @font-family-default-medium;
     font-size: 20px;
     line-height: 22px;
     text-transform: uppercase;
-    display: inline-block;
     max-width: 195px;
     overflow: hidden;
     &:after {

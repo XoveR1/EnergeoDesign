@@ -12,6 +12,7 @@ nav.aside-accordion {
       padding: 20px;
       color: @color-gray;
       text-decoration: none;
+      cursor: pointer;
       &:hover {
         color: @color-green;
       }
@@ -38,16 +39,16 @@ nav.aside-accordion {
       li {
         background: @color-products-dubnav-bg;
         border-bottom: 1px solid @color-white;
-        &:hover {
+        &:hover, &.active {
           background: @color-products-dubnav-bg-hover;
+          a {
+            color: @color-white;
+          }
         }
         a {
           text-transform: uppercase;
           padding: 10px 0 10px 50px;
           color: @color-green;
-          &:hover {
-            color: @color-white;
-          }
         }
       }
     }

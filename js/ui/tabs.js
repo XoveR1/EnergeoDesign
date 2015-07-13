@@ -4,9 +4,9 @@
 
         options = options || {};
         var tabMenuSelector = this.selector;
-        var tabBtnSelector = options.tabBtnSelector || 'a'
-        var tabElemToActivate = options.tabElemToActivate || 'li'
-        var activeClass = options.activeClass || 'active'
+        var tabBtnSelector = options.tabBtnSelector || 'a';
+        var tabElemToActivate = options.tabElemToActivate || 'li';
+        var activeClass = options.activeClass || 'active';
 
         $(document).on('click', tabMenuSelector + ' ' + tabBtnSelector, function(e){
             e.preventDefault()
@@ -17,7 +17,7 @@
 
             $elemToActivate.addClass(activeClass)
                 .siblings()
-                .removeClass(activeClass)
+                .removeClass(activeClass);
 
             $linkedTab.addClass(activeClass)
                 .siblings()

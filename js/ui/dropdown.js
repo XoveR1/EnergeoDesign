@@ -8,12 +8,15 @@
         var itemToPickSelector = options.itemToPickSelector || 'a';
         var activeClassToAdd = options.activeClassToAdd || 'active';
         var isSelectable = options.isSelectable !== false;
+        var allowClick = false ? options.allowClick === false : true;
 
         var itemToPickFullSelector = [
             dropdownTriggerSelector,
             blockToShowSelector,
             itemToPickSelector
         ].join(' ');
+
+        var triggerSelector = [dropdownTriggerSelector, blockToChangeSelector].join(' ') + ':first';
 
         var show = function ($dropdownContainer) {
             var $blockToShow = $dropdownContainer.find(blockToShowSelector);
@@ -30,9 +33,9 @@
             });
         };
 
-        $(document).on('click', dropdownTriggerSelector, function (e) {
+        $(document).on('click', triggerSelector, function (e) {
             e.preventDefault();
-            var $dropdownContainer = $(this);
+            var $dropdownContainer = $(this).parent();
 
             if ($dropdownContainer.hasClass(activeClassToAdd)) {
                 hide($dropdownContainer);
@@ -42,7 +45,9 @@
         });
 
         $(document).on('click', itemToPickFullSelector, function (e) {
-            e.preventDefault();
+            if(!allowClick){
+                e.preventDefault();
+            }
             var $itemToPick = $(this),
                 $itemForActive = $itemToPick.closest(itemForActiveSelector),
                 $dropdownContainer = $itemToPick.closest(dropdownTriggerSelector);
@@ -74,5 +79,5 @@
 
 $(document).ready(function(){
     $('.category-select').customDropdown();
-    $('.sub-pages').customDropdown({isSelectable: false});
+    $('.sub-pages').customDropdown({isSelectable: false, blockToChangeSelector: 'a'});
 });

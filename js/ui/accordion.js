@@ -8,7 +8,10 @@
         var blockToShowTag = options.blockToShowTag || 'ul';
         var itemForActiveTag = options.itemForActiveTag || 'li';
         var activeClassToAdd = options.activeClassToAdd || 'active';
-        var itemToAccordionSelector = accordionContainerSelector + ' ' + itemToAccordionTag;
+        var itemToAccordionSelector = accordionContainerSelector + ' > ' +
+            blockToShowTag + ' > ' +
+            itemForActiveTag + ' >' +
+            itemToAccordionTag;
 
         var isMobileScreen = function(){
             return $('body').width() <= MOBILE_WIDTH;

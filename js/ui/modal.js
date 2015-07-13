@@ -36,7 +36,7 @@
                     marginTop: 0,
                     marginLeft: 0,
                     top: 0,
-                    left: 0,
+                    left: 0
                 });
                 if(windowHeight < modalHeight) {
                     $modalContainer.css({

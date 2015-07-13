@@ -76,7 +76,7 @@ function AsideNav(){
         if(!self.isMobileScreen()){return}
         self.resetStyles();
     });
-};
+}
 
 $(document).ready(function(){
      AsideNav();

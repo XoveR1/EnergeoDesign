@@ -23,13 +23,11 @@
       list-style: none;
       vertical-align: top;
 
-      &:first-child a, &:last-child a {
+      a.start-link, a.next-link {
         margin: 0;
         background: @color-green;
         color: @color-white;
         font-family: @font-family-default-medium;
-      }
-      &:first-child a, &:last-child a {
         padding-top: 8px;
         padding-bottom: 8px;
         font-size: 15px;
@@ -116,8 +114,10 @@
             line-height: 20px;
             letter-spacing: 1px;
             padding: 10px;
+            font-size: 16px;
             width: 80px;
             &:hover {
+              font-family: @font-family-default;
               text-decoration: none;
               background: @color-pagination-sub-light;
             }

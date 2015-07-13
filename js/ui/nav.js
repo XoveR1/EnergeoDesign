@@ -82,7 +82,7 @@ function MobileNav(){
             if(waitUntilZero == 0 && callback){
                 callback();
             }
-        }
+        };
         self.hideNav(wait);
         self.hideSearchForm(hideHeader, wait);
         self.hidePhonesBlock(hideHeader, wait);
