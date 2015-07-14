@@ -1,0 +1,51 @@
+.contacts-block {
+  article {
+    background: @color-white;
+    margin: 20px 20px 20px 0;
+    padding: 30px 40px;
+    .rounded(5px);
+    .box-shadow(0 2px 0 rgba(0,0,0,0.2));
+
+    h1 {
+      color: @color-green;
+      font-family: @font-family-roboto-black;
+      text-transform: uppercase;
+      margin: 10px 0 20px 0;
+      font-size: 24px;
+    }
+
+    h2 {
+      color: @color-dark-gray;
+      margin: 25px 0 25px;
+      font-size: 24px;
+      font-weight: normal;
+    }
+
+    h3 {
+      color: @color-dark-gray;
+      margin: 40px 0 25px;
+      font-size: 23px;
+      font-weight: normal;
+    }
+
+    p {
+      line-height: 18px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .contacts-block {
+    display: table;
+    .left-column {
+      width: 60%;
+      display: table-cell;
+    }
+    .right-column {
+      display: table-cell;
+    }
+    article {
+
+    }
+  }
+}
