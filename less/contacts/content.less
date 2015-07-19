@@ -1,10 +1,29 @@
 .contacts-block {
-  article {
+  padding: 10px;
+
+  .left-column {
+    article {
+      padding: 30px 40px;
+      margin: 0 0 10px 0;
+      background: @color-white;
+      .rounded(5px);
+      .box-shadow(0 2px 0 rgba(0,0,0,0.2));
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &>.right-column {
+    vertical-align: top;
     background: @color-white;
-    margin: 20px 20px 20px 0;
-    padding: 30px 40px;
     .rounded(5px);
     .box-shadow(0 2px 0 rgba(0,0,0,0.2));
+    margin-top: 10px;
+  }
+
+  article {
 
     h1 {
       color: @color-green;
@@ -12,6 +31,7 @@
       text-transform: uppercase;
       margin: 10px 0 20px 0;
       font-size: 24px;
+      line-height: 26px;
     }
 
     h2 {
@@ -19,6 +39,7 @@
       margin: 25px 0 25px;
       font-size: 24px;
       font-weight: normal;
+      line-height: 26px;
     }
 
     h3 {
@@ -38,28 +59,101 @@
     .box-shadow(0 2px 0 rgba(0, 0, 0, 0.2));
     background: @color-green url("@{images-url}/phones_bg.png") 100% 0 no-repeat;
     background-size: auto 100%;
-    padding: 20px 24% 20px 30px;
+    padding: 20px 20px 20px 30px;
     color: @color-white;
     font-size: 20px;
+    line-height: 22px;
     .container {
-      display: table;
-      width: 100%;
-    }
-    .right-column {
-      display: table-cell;
-    }
-    .left-column {
-      width: 60%;
-      display: table-cell;
-      vertical-align: middle;
+      margin: 0;
     }
     a {
       color: @color-white;
       font-size: 20px;
+      text-decoration: none;
     }
     li {
       list-style: none;
-      padding: 10px 0;
+      padding: 5px 0;
+    }
+  }
+
+  .contacts-list {
+    display: inline-block;
+    width: 100%;
+    margin: 30px 0 0 0;
+    li {
+      list-style: none;
+      font-size: 16px;
+      line-height: 18px;
+      i {
+        position: relative;
+        top: 4px;
+        display: inline-block;
+        margin-right: 5px;
+      }
+      a {
+        text-decoration: none;
+        color: @color-gray;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .btn-blue {
+    margin: 10px 0 0 0;
+    vertical-align: top;
+  }
+
+  .partners-block {
+    padding-bottom: 20px;
+    h1 {
+      padding: 40px 0 30px 40px;
+      margin: 0;
+    }
+    .partner-item {
+      display: table;
+      padding: 10px;
+      background: @color-partners-odd;
+      &:nth-child(2n) {
+        background: @color-partners-even;
+      }
+      .left-column {
+        width: 60%;
+        display: table-cell;
+      }
+      .right-column {
+        display: table-cell;
+      }
+    }
+    .city {
+      display: table-row;
+      font-size: 12px;
+    }
+    .name {
+      padding-top: 6px;
+      display: block;
+      text-transform: uppercase;
+      color: @color-green;
+      font-weight: bold;
+    }
+    .address {
+      padding-top: 6px;
+      display: block;
+      color: @color-dark-gray;
+    }
+    .phone {
+      display: block;
+    }
+    a {
+      display: inline-block;
+      padding-top: 6px;
+      color: @color-dark-gray;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -67,15 +161,100 @@
 @media only screen and (min-width: 768px) {
   .contacts-block {
     display: table;
+    width: 100%;
     .left-column {
-      width: 60%;
+      width: 65%;
       display: table-cell;
+      article {
+        margin: 0 10px 10px 0;
+      }
     }
     .right-column {
+      margin-top: 0;
       display: table-cell;
+      article {
+        margin-left: 0;
+        height: 100%;
+      }
     }
-    article {
+    .phones-list {
+      .container {
+        display: block;
+        width: auto;
+      }
+      .right-column {
+        display: block;
+      }
+      .left-column {
+        width: auto;
+        display: block;
+      }
+    }
+    .contacts-list {
+      width: auto;
+    }
+    .btn-blue {
+      margin-top: 45px;
+      float: right;
+    }
+    .partners-block {
+      .container {
+        overflow-y: scroll;
+        max-height: 470px;
+      }
+      .partner-item {
+        display: block;
+        .left-column {
+          width: auto;
+          display: block;
+        }
+        .right-column {
+          display: block;
+        }
+      }
+    }
+  }
+}
 
+@media only screen and (min-width: 1200px) {
+  .contacts-block {
+    padding: 20px 0 0 0;
+    .left-column {
+      article {
+        margin: 0 20px 20px 0;
+      }
+    }
+    .phones-list {
+      .container {
+        display: table;
+        width: 100%;
+      }
+      .right-column {
+        display: table-cell;
+      }
+      .left-column {
+        width: 47%;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+    .partners-block {
+      .container {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        max-height: 470px;
+      }
+      .partner-item {
+        display: table;
+        width: 100%;
+        .left-column {
+          width: 60%;
+          display: table-cell;
+        }
+        .right-column {
+          display: table-cell;
+        }
+      }
     }
   }
 }
