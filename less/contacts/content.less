@@ -158,6 +158,92 @@
   }
 }
 
+.faces-block {
+  padding: 0 0 20px 0;
+  h1 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin: 30px 0;
+  }
+  ul {
+    display: block;
+    text-align: center;
+  }
+  li {
+    list-style: none;
+    display: inline-block;
+    width: 26%;
+    vertical-align: top;
+    text-align: left;
+    position: relative;
+    .container {
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      padding: 20px;
+      width: 64%;
+      height: 255px;
+      background: @color-white;
+      .rounded(5px);
+      .box-shadow(0 2px 0 rgba(0,0,0,0.2));
+      text-align: center;
+      vertical-align: middle;
+      z-index: 90;
+    }
+    &:after {
+      content: '';
+      display: inline-block;
+      height: 7px;
+      background: @color-green;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      right: -10px;
+      z-index: 10;
+    }
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      background: @color-green;
+      border-radius: 10px;
+      position: absolute;
+      top: 50%;
+      right: 8%;
+      z-index: 10;
+      margin-top: -7px;
+    }
+    &:last-child {
+      width: 19.5%;
+      .container {
+        width: auto;
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+  figure {
+    margin: 0;
+  }
+  .name {
+    color: @color-dark-gray;
+    display: block;
+    margin: 10px 0 0 0;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  .post {
+    display: block;
+    margin: 10px 0 0 0;
+  }
+  .phone {
+    display: block;
+    margin: 10px 0 0 0;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .contacts-block {
     display: table;
