@@ -219,6 +219,44 @@
   }
 }
 
+.feedback-modal {
+  .modal-container {
+    width: 400px;
+    padding: 40px;
+  }
+  h1 {
+    color: @color-green;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    font: @font-family-roboto-black;
+  }
+  form {
+    padding: 0 50px 0 50px;
+    label {
+      display: block;
+      margin-top: 20px;
+    }
+    input, textarea {
+      margin: 10px 0 0 0;
+      display: block;
+      width: 270px;
+      max-width: 270px;
+      border: 1px solid @color-super-light-gray;
+      .rounded(5px);
+      padding: 10px;
+      outline: none;
+    }
+    textarea {
+      min-height: 80px;
+    }
+    button {
+      margin: 20px 0 0 0;
+      float: right;
+    }
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .contacts-block {
     &>.container {

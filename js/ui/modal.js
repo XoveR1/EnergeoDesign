@@ -97,4 +97,7 @@ $(document).ready(function(){
     $('.references-articles article').customModal({
         modal_id : 'gallery-modal'
     });
+    $('#feedBackBtn').customModal({
+        modal_id : 'feedback-modal'
+    });
 });
