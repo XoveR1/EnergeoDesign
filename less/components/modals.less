@@ -37,7 +37,6 @@
     left: 50%;
     background: @color-white;
     opacity: 0;
-    .rounded(8px);
     .icon-close-cross {
       position: absolute;
       right: -35px;
@@ -49,5 +48,13 @@
 
   &.modal-open .modal-container{
     pointer-events: auto;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .modal {
+    .modal-container {
+      .rounded(8px);
+    }
   }
 }

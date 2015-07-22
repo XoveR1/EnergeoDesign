@@ -29,18 +29,21 @@
             var $modalContainer = $(modalContainerSelector),
                 modalWidth = $modalContainer.outerWidth(),
                 modalHeight = $modalContainer.outerHeight(),
-                windowHeight = $(window).height();
+                windowHeight = $(window).height(),
+                modalTBPadding = parseInt($modalContainer.css('paddingTop')) +
+                    parseInt($modalContainer.css('paddingBottom'));
 
             if(isMobileScreen()){
                 $modalContainer.css({
                     marginTop: 0,
                     marginLeft: 0,
                     top: 0,
-                    left: 0
+                    left: 0,
+                    overflowX: 'none'
                 });
                 if(windowHeight < modalHeight) {
                     $modalContainer.css({
-                        height: windowHeight,
+                        height: windowHeight - modalTBPadding,
                         overflowY: 'auto'
                     })
                 } else {
@@ -53,7 +56,8 @@
                     top: '50%',
                     left: '50%',
                     height: 'auto',
-                    overflowY: 'hidden'
+                    overflowY: 'hidden',
+                    overflowX: 'none'
                 });
             } else {
                 $modalContainer.css({
@@ -61,8 +65,9 @@
                     marginLeft: -modalWidth / 2,
                     top: 0,
                     left: '50%',
-                    height: windowHeight,
-                    overflowY: 'auto'
+                    height: windowHeight - modalTBPadding,
+                    overflowY: 'auto',
+                    overflowX: 'none'
                 });
             }
         };

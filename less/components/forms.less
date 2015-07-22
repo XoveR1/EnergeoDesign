@@ -1,0 +1,14 @@
+input, textarea {
+  display: block;
+  width: 270px;
+  max-width: 270px;
+  border: 1px solid @color-light-gray;
+  .rounded(5px);
+  padding: 10px;
+  outline: none;
+  &:focus {
+    border-color: @color-green;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(144, 177, 78, 0.6);
+    outline: 0 none;
+  }
+}
