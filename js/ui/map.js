@@ -1,6 +1,12 @@
 (function ($) {
     $.fn.customMap = function (options) {
-        var myLatlng = new google.maps.LatLng(53.990105, 27.679273);
+        options = options || {};
+        var cursorLangitude = options.cursorLangitude || this.data('map-longitude');
+        var cursorLatitude = options.cursorLatitude || this.data('map-latitude');
+        var markerLabel = options.cursorLatitude || this.data('map-marker-label');
+        var markerIcon = options.cursorLatitude || this.data('map-marker-icon');
+
+        var myLatlng = new google.maps.LatLng(cursorLangitude, cursorLatitude);
         var mapOptions = {
             center: myLatlng,
             zoom: 15,
@@ -10,7 +16,8 @@
         var marker = new google.maps.Marker({
             position: myLatlng,
             map: map,
-            title: 'ЧАСТНОЕ ПРЕДПРИЯТИЕ «ЭНЕРГЕО»'
+            title: markerLabel,
+            icon: markerIcon
         });
     }
 })(jQuery);

@@ -8,6 +8,8 @@
         var modalContainerSelector = options.modalContainerSelector || '.modal-container';
         var overlaySelector = options.overlaySelector || '.modal-overlay';
         var closeBtnSelector = options.closeBtnSelector || '.modal-close-btn';
+        var modalDisableOverlay = options.modalDisableOverlay || '.modal-disable-overlay';
+        var scrollableClass = options.scrollableClass || 'scrollable';
 
         var getModal = function($modalBtn){
             return $('#' + (options.modal_id || $modalBtn.data('modal-id')))
@@ -27,6 +29,7 @@
 
         var centreModal = function(){
             var $modalContainer = $(modalContainerSelector),
+                $modalDisableOverlay = $modalContainer.find(modalDisableOverlay),
                 modalWidth = $modalContainer.outerWidth(),
                 modalHeight = $modalContainer.outerHeight(),
                 windowHeight = $(window).height(),
@@ -34,7 +37,7 @@
                     parseInt($modalContainer.css('paddingBottom'));
 
             if(isMobileScreen()){
-                $modalContainer.css({
+                $modalContainer.addClass(scrollableClass).css({
                     marginTop: 0,
                     marginLeft: 0,
                     top: 0,
@@ -50,26 +53,27 @@
                     $modalContainer.css({height: 'auto'})
                 }
             } else if(windowHeight > modalHeight){
-                $modalContainer.css({
+                $modalContainer.removeClass(scrollableClass).css({
                     marginTop: -modalHeight / 2,
                     marginLeft: -modalWidth / 2,
                     top: '50%',
                     left: '50%',
                     height: 'auto',
-                    overflowY: 'hidden',
-                    overflowX: 'none'
+                    overflowY: 'visible',
+                    overflowX: 'visible'
                 });
             } else {
-                $modalContainer.css({
+                $modalContainer.addClass(scrollableClass).css({
                     marginTop: 0,
                     marginLeft: -modalWidth / 2,
                     top: 0,
                     left: '50%',
                     height: windowHeight - modalTBPadding,
-                    overflowY: 'auto',
-                    overflowX: 'none'
+                    overflowY: 'scroll',
+                    overflowX: 'hidden'
                 });
             }
+            $modalDisableOverlay.css({height: modalHeight})
         };
 
         $(document).on('click', modalTriggerSelector, function(e){

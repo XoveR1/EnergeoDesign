@@ -29,7 +29,7 @@
   }
 
   .modal-container {
-    overflow: hidden;
+    overflow: visible;
     max-width: 1000px;
     z-index: 140;
     position: fixed;
@@ -43,6 +43,25 @@
       top: 0;
       z-index: 151;
       cursor: pointer;
+    }
+    .modal-disable-overlay {
+      height: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      z-index: 160;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+    }
+    &.scrollable {
+      .icon-close-cross {
+        right: 5px;
+        top: 5px;
+        &:before, &:after {
+          .box-shadow(none)
+        }
+      }
     }
   }
 

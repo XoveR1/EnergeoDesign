@@ -263,7 +263,12 @@
                 </section>
             </div>
             <section class="map-block">
-                <div id="mapBlock" class="container"></div>
+                <div id="mapBlock" class="container"
+                     data-map-longitude="53.990105"
+                     data-map-latitude="27.679273"
+                     data-map-marker-label="ЧАСТНОЕ ПРЕДПРИЯТИЕ «ЭНЕРГЕО»"
+                     data-map-marker-icon="images/map_pointer.png">
+                </div>
             </section>
         </div>
     </div>
@@ -346,18 +351,31 @@
     <div class="modal-overlay"></div>
     <div class="modal-container">
         <i class="modal-close-btn icon-close-cross"></i>
+        <div class="modal-disable-overlay"></div>
         <div class="feedback-form">
             <h1>Обратная связь</h1>
             <p>Если у вас возникли вопросы или пожелания вы можете заполнить форму и отправить её нам. Мы обязательно с вами свяжемся.</p>
+            <div class="alert-success" role="alert">
+                Cообщение было успешно отправлено!
+            </div>
             <form method="post" action="#">
-                <label for="name-field">Имя</label>
-                <input id="name-field" type="text" maxlength="100" name="name" />
-                <label for="phone-field">Телефон</label>
-                <input id="phone-field" type="tel" name="phone"/>
-                <label for="email-field">E-mail</label>
-                <input id="email-field" type="email" name="email"/>
-                <label for="message-field">Сообщение</label>
-                <textarea id="message-field" name="message"></textarea>
+                <div class="controls-group has-error">
+                    <label for="name-field">Имя</label>
+                    <input id="name-field" type="text" maxlength="100" name="name" />
+                    <p class="error-message">Вы ввели имя не верно. Попробуйте ввести его ещё раз.</p>
+                </div>
+                <div class="controls-group">
+                    <label for="phone-field">Телефон</label>
+                    <input id="phone-field" type="tel" name="phone"/>
+                </div>
+                <div class="controls-group">
+                    <label for="email-field">E-mail</label>
+                    <input id="email-field" type="email" name="email"/>
+                </div>
+                <div class="controls-group">
+                    <label for="message-field">Сообщение</label>
+                    <textarea id="message-field" name="message"></textarea>
+                </div>
                 <div class="form-controls">
                     <button class="btn-green" type="submit">Обратная связь</button>
                 </div>

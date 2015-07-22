@@ -1,3 +1,35 @@
+.controls-group {
+  label {
+    display: block;
+    margin: 20px 0 0 0;
+  }
+  input, textarea {
+    margin: 10px 0 0 0;
+    display: block;
+  }
+  textarea {
+    min-height: 80px;
+  }
+
+  &.has-error {
+    input, textarea {
+      border-color: @color-red;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(169, 68, 66, 0.6);
+    }
+    label {
+      color: @color-red;
+    }
+    .error-message {
+      color: @color-red;
+      text-align: left;
+    }
+  }
+  .error-message {
+    margin: 5px 0 0 0;
+    text-align: center;
+  }
+}
+
 input, textarea {
   display: block;
   width: 270px;
@@ -11,4 +43,13 @@ input, textarea {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(144, 177, 78, 0.6);
     outline: 0 none;
   }
+}
+
+.alert-success {
+  background: @color-green;
+  padding: 20px;
+  .rounded(5px);
+  margin: 20px 0;
+  color: @color-white;
+  text-align: center;
 }
