@@ -1,27 +1,31 @@
 .article-block {
   margin-top: 20px;
   article {
+    vertical-align: top;
     h1 {
       color: @color-green;
       text-transform: uppercase;
       font-size: 24px;
       line-height: 26px;
       font: @font-family-roboto-black;
+      padding: 0 30px;
     }
 
     p {
       margin: 0 0 20px 0;
       line-height: 16px;
+      padding: 0 30px;
     }
 
     .container {
-      padding: 20px;
-      margin: 0 10px 20px;
+      margin: 0 0 20px;
     }
   }
 
   .left-block {
     .container {
+      margin: 0 10px 20px;
+      padding: 20px 0;
       .rounded(10px);
       .box-shadow(0 2px 0 rgba(0, 0, 0, 0.1));
       background: @color-white;
@@ -30,6 +34,7 @@
 
   .right-block {
     margin: 0 10px;
+    padding: 0 0 20px 0;
     .rounded(10px);
     .box-shadow(0 2px 0 rgba(0, 0, 0, 0.1));
     background: @color-white;
@@ -39,11 +44,12 @@
 
 @media only screen and (min-width: 768px) {
   .article-block {
+    margin: 20px 10px 0;
     display: table;
 
     .left-block {
       display: table-cell;
-      width: 50%;
+      width: 55%;
       vertical-align: top;
       .container {
         margin: 0 20px 0 0;
@@ -66,5 +72,11 @@
         margin: 20px 0;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .article-block {
+    margin: 20px 0 0;
   }
 }
