@@ -10,10 +10,6 @@
     .rounded(5px);
     .box-shadow(0 2px 0 rgba(0,0,0,0.2));
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
     h1 {
       margin: 0 0 20px;
       color: @color-green;
@@ -49,6 +45,11 @@
       position: absolute;
       bottom: 20px;
       right: 30px;
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 10px;
     }
   }
 
@@ -112,6 +113,19 @@
       font-size: 12px;
       .rounded(4px);
       font-weight: normal;
+
+      &:after {
+        position: absolute;
+        left: -4px;
+        top: 50%;
+        content: '';
+        width: 0;
+        height: 0;
+        margin-top: -3px;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-right: 4px solid @color-tags-gray-dark;
+      }
     }
   }
 }
